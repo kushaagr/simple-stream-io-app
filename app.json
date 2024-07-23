@@ -1,12 +1,35 @@
 {
-  "name": "stream-app",
-  "slug": "stream-app",
-  "android": {
-    "package": "com.kushaaagr.streamapp"
-  },
-  "splash": {
-    "image": "./assets/splash.png",
-    "resizeMode": "contain",
-    "backgroundColor": "#25292e" 
+  "expo": {
+    "name": "stream-app",
+    "slug": "stream-app",
+    "android": {
+      "package": "com.kushaaagr.streamapp"
+    },
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#25292e"
+    },
+    "plugins": [
+      "@stream-io/video-react-native-sdk",
+      [
+        "@config-plugins/react-native-webrtc",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 34,
+            "extraMavenRepos": [
+              "../../node_modules/@notifee/react-native/android/libs"
+            ]
+          }
+        }
+      ]
+    ]
   }
 }
