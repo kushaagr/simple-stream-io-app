@@ -23,10 +23,11 @@
         "expo-build-properties",
         {
           "android": {
-            "minSdkVersion": 34,
             "extraMavenRepos": [
               "../../node_modules/@notifee/react-native/android/libs"
-            ]
+            ],
+            "minSdkVersion": 23,
+            "targetSdkVersion": 34
           }
         }
       ]
